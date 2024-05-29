@@ -1,70 +1,196 @@
-# Getting Started with Create React App
+# Stylish Product List with Cart
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React project that displays a product list and a shopping cart on the same page. It uses React for the UI components and basic HTML/CSS for styling.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [CSS](#css)
+- [License](#license)
 
-### `npm start`
+## Project Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project demonstrates a stylish product list with a shopping cart interface. Each product card includes a thumbnail, description, price, stock information, and an "Add to Cart" button. The shopping cart allows incrementing and decrementing the quantity of items and removing items from the cart.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Display a list of products with thumbnails, descriptions, prices, and stock information.
+- Add products to the shopping cart.
+- Increment and decrement product quantities in the cart.
+- Remove products from the cart.
+- Responsive and colorful UI.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Ayomisco/Afric-Agility-Shopping-Cart-Project.git
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate to the project directory:
+    ```bash
+    cd Afric-Agility-Shopping-Cart-Project
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Start the development server:
+    ```bash
+    npm start
+    ```
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Open your browser and navigate to `http://localhost:3000`.
+2. You should see a list of products and a shopping cart interface.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## CSS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The CSS styling for this project is included in the `main.css` file. Below is the complete CSS code:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```css
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
 
-## Learn More
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+    font-weight: bold;
+}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+.product-list, .cart {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
 
-### Code Splitting
+.product, .cart-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(30% - 20px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+.product:hover, .cart-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
 
-### Analyzing the Bundle Size
+.product img, .cart-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+.product .details, .cart-item .details {
+    text-align: center;
+}
 
-### Making a Progressive Web App
+.product .details p, .cart-item .details p {
+    margin: 10px 0;
+    color: #555;
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: 10px;
+}
 
-### Advanced Configuration
+button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+.qty-btn {
+    background: #6c757d;
+    margin: 0 5px;
+}
 
-### Deployment
+.qty-btn:hover {
+    background: #5a6268;
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+.remove-btn {
+    background: #dc3545;
+    margin-top: 15px;
+}
 
-### `npm run build` fails to minify
+.remove-btn:hover {
+    background: #c82333;
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+.cart-total {
+    width: 100%;
+    text-align: right;
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #007BFF;
+}
+
+.product:nth-child(1) .details h3,
+.product:nth-child(1) button {
+    background: #FF5733;
+}
+
+.product:nth-child(2) .details h3,
+.product:nth-child(2) button {
+    background: #33C4FF;
+}
+
+.product:nth-child(3) .details h3,
+.product:nth-child(3) button {
+    background: #FFC133;
+}
+
+.product:nth-child(4) .details h3,
+.product:nth-child(4) button {
+    background: #9B59B6;
+}
+
+.product:nth-child(5) .details h3,
+.product:nth-child(5) button {
+    background: #28A745;
+}
+
+.product:nth-child(6) .details h3,
+.product:nth-child(6) button {
+    background: #E74C3C;
+}
+```
