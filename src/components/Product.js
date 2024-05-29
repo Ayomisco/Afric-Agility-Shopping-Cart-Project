@@ -14,6 +14,7 @@ export const Product = ({product_item}) => {
     return (
 
         <div className='product'>
+            <img src={product_item.image} alt={product_item.name} />
             
             <div className='details'>
                 <h3> {product_item.name} </h3>

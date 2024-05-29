@@ -12,7 +12,7 @@ export const Cart = () => {
         <h1>Shopping Cart</h1>
         
         <div className='cart'>
-            {cart.length === 0 ? <p>The cart is empty</p> : cart.map(item => <CartItem key={item.id} item_from_cart={{item}}/> )}
+            {cart.length === 0 ? <p>The cart is empty</p> : cart.map(item => <CartItem key={item.id} item_from_cart={item}/> )}
 
         </div>
 

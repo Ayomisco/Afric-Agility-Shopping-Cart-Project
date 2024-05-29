@@ -7,6 +7,8 @@ import { CartProvider } from './context/GlobalContext';
 function App() {
   return (
     <CartProvider>
+      
+
     <div className="container">
       <h1>PRODUCT LIST</h1>
 
@@ -16,6 +18,8 @@ function App() {
       <Cart />
 
     </div>
+
+
     </CartProvider>
   );
 }
